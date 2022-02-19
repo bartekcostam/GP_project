@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+                <img src="/assets/logo/429a1db40beb4e12a897cc123387ed80.png" alt="" width="170" height="80">
+        </a>
+        <a class="btn btn-outline-primary btn-lg" href="/umowWizyte">Umow Wizyte</a>
+        <a class="btn btn-outline-primary btn-lg" href="#signup">Lekarze</a>
+        <a class="btn btn-outline-primary btn-lg" href="/kontakt">Kontakt</a>
+        <a class="btn btn-outline-primary btn-lg" href="/zaloguj">Zaloguj</a>
+    </div>
+</nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-md-2">.</div>
+            <div class="col-6 col-md-8">
+                <br><br><br>
+                <img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331257__340.png" class="img-fluid" alt="...">
+
+<br><br><br>
+<div class="box">
+                <form class="forma" action="http://localhost:3000/zalogujUsr" method="post" enctype="application/json">
+                    <div class="mb-4">
+                      <label for="exampleInputEmail1" class="form-label">Nazwa uzytkownika</label>
+                      <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">Tekst</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Haslo</label>
+                      <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Zaloguj</button>
+                  </form>
+
+                </div>
+
+            </div>
+            <div class="col-6 col-md-2">.</div>
+          </div>
+        
+    
+    </div>
+    <style>
+        body{
+          background: radial-gradient(circle, black, blue);
+        }
+        .forma{
+
+                
+                background-color:rgb(231, 241, 248);
+                border-radius:10px;
+                padding: 30px;
+        }
+        .forma:hover{
+
+                
+background-color:rgb(188, 222, 245);
+border-radius:10px;
+padding: 30px;
+}
+        
+        .img-fluid{
+          min-width: -webkit-fill-available;
+        }
+        </style>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

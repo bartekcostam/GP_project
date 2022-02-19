@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt
+    </title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+</head>
+<body>
+    
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                    <img src="/assets/logo/429a1db40beb4e12a897cc123387ed80.png" alt="" width="170" height="80">
+            </a>
+            <a class="btn btn-outline-primary btn-lg" href="/umowWizyte">Umow Wizyte</a>
+            <a class="btn btn-outline-primary btn-lg" href="#signup">Lekarze</a>
+            <a class="btn btn-outline-primary btn-lg" href="/kontakt">Kontakt</a>
+            <a class="btn btn-outline-primary btn-lg" href="/zaloguj">Zaloguj</a>
+        </div>
+    </nav>
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container contact-form">
+            <div class="contact-image">
+                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+            </div>
+            <form method="post" action="http://localhost:3000/kontakt/mail" enctype="application/json">
+                <h3>Wyslij wiadomość</h3>
+               <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Imie *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control" placeholder="Email *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone_nr" class="form-control" placeholder="Nr Telefonu *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="btnSubmit" class="btnContact" value="Wyslij wiadomosc" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" placeholder="Twoja wiadomosc *" style="width: 100%; height: 150px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+</div>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+
+
+body{
+    background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+}
+h3{
+    font-size:40px;
+}
+.contact-form{
+    background: #fff;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    width: 70%;
+}
+.contact-form .form-control{
+    border-radius:1rem;
+}
+.contact-image{
+    text-align: center;
+}
+.contact-image img{
+    border-radius: 6rem;
+    width: 15%;
+    margin-top: -3%;
+    transform: rotate(29deg);
+}
+.contact-form form{
+    padding: 14%;
+}
+.contact-form form .row{
+    margin-bottom: -7%;
+}
+.contact-form h3{
+    margin-bottom: 8%;
+    margin-top: -10%;
+    text-align: center;
+    color: #0062cc;
+}
+.contact-form .btnContact {
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: 4.5%;
+    background: #6456e4;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact-form .btnContact:hover {
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: 4.5%;
+    background: #142570;
+    font-weight: 800;
+    color: #fff;
+    cursor: pointer;
+}
+.btnContactSubmit
+{
+    width: 60%;
+    border-radius: 1rem;
+    padding: 3.5%;
+    color: #fff;
+    background-color: #0062cc;
+    border: none;
+    cursor: pointer;
+}
+
+
+    </style>
+</body>
+</html>

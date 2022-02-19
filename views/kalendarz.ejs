@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+
+<body>
+
+<%=wyniki[0].name%>
+
+
+<% wyniki.forEach(function(o) { %>
+    <li><%= o.name %> - <%= o.surname %> <%= o.date  %></li>
+<% }); %>
+
+
+<% daty.forEach(function(o) { %>
+    <li><%= o.name %> - <%= o.surname %> <%= o.sformatowanaData  %></li>
+<% }); %>
+
+<script>
+let dzien
+
+
+</script>
+
+<% for(let x = 0; x<wyniki.length; x++){  %>
+    <% wyniki[x].name %>
+    <% } %>
+    <header>
+        <h1>Kalendarz wizyt</h1>
+
+        <form action="/" method="get">
+            <input type="text" placeholder="szukaj roku" name="year">
+            <button type="submit">Szukaj</button>
+        </form>
+
+        <h2>Rok <%= year %></h2>
+    </header>
+
+
+    <div class="calendar-container">
+        <% for(let month = 0;month < calendar.length;month++) { %>
+
+        <div class="month-container" id="<%= months[month] %>">
+            <h3 style="text-align: center;"> <%= months[month] %> </h3>
+
+            <!--- Tutaj jest sekcja dni tygodnia, nazwy kolumn --->
+            <div class="day-of-week">
+                <span>Niedziela</span><span>Poniedziale</span><span>Wtorek</span><span>
+                    Środa</span><span>Czwartek</span><span>Piątek</span><span>Sobota</span>
+            </div>
+
+            <!--- Tutaj jest sekcja --->
+            <% for(let x = 0;x < calendar[month].length;x++) { %>
+            <div class="days">
+                <% for(let y = 0;y < calendar[month][x].length;y++) { %>
+
+                <div class="date">
+                    <div id="<%=calendar[month][x][y] %>">
+                        <%= calendar[month][x][y] %>
+                        <div class="rezerwacje" id="<%=calendar[month][x][y]%>">Rezerwacje</div>
+                    </div>
+                </div>
+
+                <% } %>
+            </div>
+            <% } %>
+        </div>
+
+        <% } %>
+    </div>
+<style>
+
+body{
+    background: radial-gradient(circle, rgb(255, 255, 255), rgb(240, 240, 255));
+}
+
+header{
+    text-align: center;
+}
+
+header > h1{
+    color: black;
+    font-family: sans-serif;
+}
+
+.calendar-container{
+    width: 100%;
+ 
+
+}
+.month-container{
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+}
+
+.day-of-week{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+   
+    grid-gap: 1em;
+}
+
+.day-of-week > span{
+    height: 14vh;
+    text-align: center;
+	font-size: 30px;
+}
+
+.days{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+   
+    grid-gap: 1em;
+}
+
+.date{
+   height: 14vh;
+    text-align: center;
+	background-color: rgb(71, 71, 195);
+	border-radius: 30px;
+	margin: 5px;
+	font-size: 45px;
+    opacity: 0.9;
+ 
+}
+
+.date:hover{
+   height: 14vh;
+    text-align: center;
+	background-color: rgb(51, 51, 199);
+	border-radius: 30px;
+	margin: 5px;
+	font-size: 50px;
+	color: white;
+    opacity:1;
+ 
+}
+
+.rezerwacje{
+    font-size:15px;
+}
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+<script>
+
+    let today = new Date();
+let dd = String(today.getDate()).padStart(2, '0');
+let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    console.log(dd , mm);
+   let current_day =  document.getElementById(`${dd}`)
+   console.log(`${dd}`)
+   console.log(typeof(current_day))
+   //current_day.style.color = "blue";
+   console.log("Tutaj trzeba dodac");
+</script>
+</body>
+
+</html>
