@@ -1,0 +1,8 @@
+-Stworzenie machanizmu sesji
+
+- Naprawianie kalendarza 
+
+- Poprawienie panelu admina 
+
+- Możliwośc logowania się na wiele kont (każdy lekarz ma swoje i powinnien wiedziec swoj kalendarz)
+
