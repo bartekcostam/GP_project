@@ -106,7 +106,7 @@ app.post('/zalogujUsr', (req, res) =>{
 
     if(req.body.username === 'admin' && req.body.password === 'password'){
         console.log("Admin sie loguje")
-        res.render('admin')
+        res.redirect('/admin')
     }
    else {
        res.send("Brak dostepu")
