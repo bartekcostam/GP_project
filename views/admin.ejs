@@ -39,7 +39,9 @@
             <img src="http://zslchrobry.lezajsk.pl/wp-content/uploads/2017/11/users.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Lista pracowników</h5>
-              
+              <% pracownicy.forEach(function(o) { %>
+                <li><%= o.imie %> - <%= o.nazwisko %> <%= o.nr_telefonu  %></li>
+            <% }); %>
               <p class="card-text">Ustawienia</p>
               <a href="#" class="btn btn-primary">dodaj nowego</a>
             </div>

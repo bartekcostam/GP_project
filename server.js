@@ -49,7 +49,7 @@ app.get('/admin', async(req, res) =>{
 
     console.log(pracownicy[0])
 
-    res.render('admin')
+    res.render('admin',{pracownicy: pracownicy[0]})
 })
 
 app.get('/kalendarz', async(req, res) =>{
