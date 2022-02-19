@@ -28,14 +28,14 @@
                 <div class="card-body">
                   <h5 class="card-title">Ustawienia</h5>
                   <p class="card-text">Ustawienia</p>
-                  <a href="#" class="btn btn-primary">Ustwienia</a>
+                  <a href="http://localhost:3000/admin/ustawienia" class="btn btn-primary">Ustwienia</a>
                 </div>
               </div>
 
 
           </div>
 
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 20rem;">
             <img src="http://zslchrobry.lezajsk.pl/wp-content/uploads/2017/11/users.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Lista pracowników</h5>
@@ -44,7 +44,7 @@
             <% }); %>
               <p class="card-text">...</p>
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                dodaj nowego pracownika
+                Dodaj nowego pracownika
               </button>
             </div>
             
@@ -79,7 +79,7 @@
                     
                         <br>
                         <div class="form-group">
-                            <input type="text" name="phone_nr" class="form-control" placeholder="Nr Telefonu *" value="" />
+                            <input type="text" name="nr_telefonu" class="form-control" placeholder="Nr Telefonu *" value="" />
                         </div>
                         <br>
                         
@@ -120,6 +120,12 @@ body {
 
 .pracownicy{
   
+}
+
+.pracownicy:hover{
+  font-size: 20px;
+  background-color:rgb(208, 233, 245);
+  border-radius:10px;
 }
 
 @keyframes gradient {

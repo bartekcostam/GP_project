@@ -47,7 +47,7 @@ app.get('/admin', async(req, res) =>{
 
     const pracownicy = await db.promise().query(`SELECT * FROM users`)
 
-    console.log(pracownicy[0])
+    //console.log(pracownicy[0])
 
     res.render('admin',{pracownicy: pracownicy[0]})
 })
@@ -55,16 +55,22 @@ app.get('/admin', async(req, res) =>{
 app.post('/admin/pracownik', async(req, res) =>{
 
     console.log(req.body)
-    
-
     const {imie,nazwisko,specjalizacja,nr_telefonu} = req.body
+    const iloscPracownikow = await db.promise().query(`SELECT id_pracownika FROM users`)
+    const id_pracownika = (iloscPracownikow[0].length) + 1 
+    //Troszke ciezko mi bylo poradzic sobie z przeslaniem wartosci null do bazy by ta samo inkrementowala pole id_pracownika i przypisywala odpowiednie id
+    //console.log(id_pracownika)
     try{
-        db.promise().query(`INSERT INTO wizyty VALUES('${imie}','${nazwisko}','${specjalizacja}','${nr_telefonu}')`)
+        await db.promise().query(`INSERT INTO users VALUES('${id_pracownika}','${imie}','${nazwisko}','${specjalizacja}','${nr_telefonu}')`)
         res.status(201).send({msg: 'Utworzono pracownika'})
     }
     catch (err){
         console.log(err)
     }
+})
+
+app.get('/admin/ustawienia', (req, res) => {
+    res.render('ustawienia')
 })
 
 app.get('/kalendarz', async(req, res) =>{
