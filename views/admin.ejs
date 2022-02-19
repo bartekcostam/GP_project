@@ -61,34 +61,38 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form method="post" action="http://localhost:3000/kontakt/mail" enctype="application/json">
-                <h3>Wyslij wiadomość</h3>
+              <form method="post" action="http://localhost:3000/admin/pracownik" enctype="application/json">
+                
                <div class="row">
                     <div class="col-md-10">
                         <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Imie *" value="" />
+                            <input type="text" name="imie" class="form-control" placeholder="Imie *" value="" />
                         </div>
                         <br>
                         <div class="form-group">
-                            <input type="text" name="email" class="form-control" placeholder="Email *" value="" />
-                        </div>
+                          <input type="text" name="nazwisko" class="form-control" placeholder="Nazwisko *" value="" />
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <input type="text" name="specjalizacja" class="form-control" placeholder="specjalizacja *" value="" />
+                    </div>
+                    
                         <br>
                         <div class="form-group">
                             <input type="text" name="phone_nr" class="form-control" placeholder="Nr Telefonu *" value="" />
                         </div>
                         <br>
-                        <div class="form-group">
-                            <input type="submit" name="btnSubmit" class="btnContact" value="Wyslij wiadomosc" />
-                        </div>
+                        
                     </div>
                     
                 </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                  <button type="submit" class="btn btn-primary">Zapisz</button>
+                </div>
             </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
-              <button type="button" class="btn btn-primary">Zapisz</button>
-            </div>
+            
           </div>
         </div>
       </div>

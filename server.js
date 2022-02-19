@@ -52,6 +52,21 @@ app.get('/admin', async(req, res) =>{
     res.render('admin',{pracownicy: pracownicy[0]})
 })
 
+app.post('/admin/pracownik', async(req, res) =>{
+
+    console.log(req.body)
+    
+
+    const {imie,nazwisko,specjalizacja,nr_telefonu} = req.body
+    try{
+        db.promise().query(`INSERT INTO wizyty VALUES('${imie}','${nazwisko}','${specjalizacja}','${nr_telefonu}')`)
+        res.status(201).send({msg: 'Utworzono pracownika'})
+    }
+    catch (err){
+        console.log(err)
+    }
+})
+
 app.get('/kalendarz', async(req, res) =>{
 
     const year = req.query.year || 2022;
