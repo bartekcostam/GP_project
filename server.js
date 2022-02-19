@@ -43,7 +43,11 @@ app.get('/zaloguj', (req, res) =>{
     res.render('zaloguj')
 })
 
-app.get('/admin', (req, res) =>{
+app.get('/admin', async(req, res) =>{
+
+    const pracownicy = await db.promise().query(`SELECT * FROM users`)
+
+    console.log(pracownicy[0])
 
     res.render('admin')
 })

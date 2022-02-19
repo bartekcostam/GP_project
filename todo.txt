@@ -6,3 +6,4 @@
 
 - Możliwośc logowania się na wiele kont (każdy lekarz ma swoje i powinnien wiedziec swoj kalendarz)
 
+- dodanie uzytkownikow do bazy danych i fetch na frontend, najlepiej w panelu admina 
