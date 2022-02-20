@@ -48,12 +48,13 @@
             <div class="card-body">
               <h5 class="card-title">Lista pracowników</h5>
               <% pracownicy.forEach(function(o) { %>
-                <li id="<%=o.id_pracownika%>" class="pracownicy"><%= o.imie %> - <%= o.nazwisko %> <%= o.specjalizacja  %>  <img id="<%=o.id_pracownika%>" onclick="usunElement(this.id)" class="usun" src="/assets/icons/cross.svg"></img>  <img id="<%=o.id_pracownika%>" onclick="edytujElement(this.id)" class="usun" src="/assets/icons/edit.svg"></img>  </li> 
+                <li id="<%=o.id_pracownika%>" class="pracownicy"><%= o.imie %> - <%= o.nazwisko %> <%= o.specjalizacja  %>  <img id="<%=o.id_pracownika%>" onclick="usunElement(this.id)" class="usun" src="/assets/icons/cross.svg"></img>  <img id="<%=o.id_pracownika%>" onclick="edytujElement(this.id)" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" class="usun" src="/assets/icons/edit.svg"></img>  </li> 
             <% }); %>
               <p class="card-text">...</p>
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Dodaj nowego pracownika
               </button>
+
             </div>
             
           </div>
@@ -88,6 +89,50 @@
                         <br>
                         <div class="form-group">
                             <input type="text" name="nr_telefonu" class="form-control" placeholder="Nr Telefonu *" value="" />
+                        </div>
+                        <br>
+                        
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                  <button type="submit" class="btn btn-primary">Zapisz</button>
+                </div>
+            </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Dane pracownika</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form method="post" action="http://localhost:3000/admin/pracownik" enctype="application/json">
+                
+               <div class="row">
+                    <div class="col-md-10">
+                        <div class="form-group">
+                            <input type="text" name="imie" class="form-control" value="<%=pracownicy[0].imie%>" />
+                        </div>
+                        <br>
+                        <div class="form-group">
+                          <input type="text" name="nazwisko" class="form-control" value="<%=pracownicy[0].nazwisko%>" />
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <input type="text" name="specjalizacja" class="form-control" value="<%=pracownicy[0].specjalizacja%>" />
+                    </div>
+                    
+                        <br>
+                        <div class="form-group">
+                            <input type="text" name="nr_telefonu" class="form-control" value="<%=pracownicy[0].nr_telefonu%>" />
                         </div>
                         <br>
                         
@@ -209,6 +254,11 @@ var xhr = new XMLHttpRequest();
   // xhr.send(document);
   }
 
+
+function edytujElement(id){
+
+
+}
 
 </script>
 
