@@ -22,18 +22,16 @@
     <li><%= o.name %> - <%= o.surname %> <%= o.sformatowanaData  %></li>
 <% }); %>
 
-<script>
-let dzien
 
 
-</script>
+
 
 <% for(let x = 0; x<wyniki.length; x++){  %>
     <% wyniki[x].name %>
     <% } %>
     <header>
         <h1>Kalendarz wizyt</h1>
-
+        <%=daty[0].sformatowanaData%>
         <form action="/" method="get">
             <input type="text" placeholder="szukaj roku" name="year">
             <button type="submit">Szukaj</button>
@@ -63,7 +61,10 @@ let dzien
                 <div class="date">
                     <div id="<%=calendar[month][x][y] %>">
                         <%= calendar[month][x][y] %>
-                        <div class="rezerwacje" id="<%=calendar[month][x][y]%>">Rezerwacje</div>
+                        <div class="rezerwacje">Rezerwacje</div>
+                        <%if (daty[0].sformatowanaData === "16/02/2022") { %>
+                            <h1>tutaj jest </h1>
+                            <% } %>
                     </div>
                 </div>
 
@@ -147,6 +148,9 @@ header > h1{
     font-size:15px;
 }
 
+.month-container{
+    display: none;
+}
 
 
 
@@ -160,16 +164,23 @@ header > h1{
 
 
 <script>
+  aktualnyMiesiac =   document.getElementById("Luty")
+  aktualnyMiesiac.style.display = "block"
 
-    let today = new Date();
+
+
+
+ let today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
 let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     console.log(dd , mm);
-   let current_day =  document.getElementById(`${dd}`)
-   console.log(`${dd}`)
-   console.log(typeof(current_day))
-   //current_day.style.color = "blue";
-   console.log("Tutaj trzeba dodac");
+   
+   let current_day =  document.getElementById(dd)
+   current_day.textContent = "Costam"
+
+   console.log(dd)
+   console.log(typeof(dd))
+   
 </script>
 </body>
 
