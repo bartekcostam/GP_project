@@ -62,7 +62,7 @@ app.post('/admin/pracownik', async(req, res) =>{
     //console.log(id_pracownika)
     try{
         await db.promise().query(`INSERT INTO users VALUES('${id_pracownika}','${imie}','${nazwisko}','${specjalizacja}','${nr_telefonu}')`)
-        res.status(201).send({msg: 'Utworzono pracownika'})
+        res.status(201)
     }
     catch (err){
         console.log(err)

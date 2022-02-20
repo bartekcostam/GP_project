@@ -17,8 +17,11 @@
 
 
     <h1>Admin Panel</h1>
-
+    
     <div class="container">
+      <div id="usunietyAlert" class="alert alert-danger" role="alert">
+        Usunales uzytkownika !
+      </div>
         <div class="row">
           <div class="col-8">
 
@@ -97,7 +100,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
-                  <button type="submit" class="btn btn-primary">Zapisz</button>
+                  <button type="submit" onclick="reload()" class="btn btn-primary">Zapisz</button>
                 </div>
             </form>
             </div>
@@ -196,6 +199,10 @@ body {
   width: 10%;
 }
 
+#usunietyAlert{
+  display:none;
+}
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -252,14 +259,34 @@ var xhr = new XMLHttpRequest();
   xhr.send();
   // xhr.send(new Int8Array());
   // xhr.send(document);
+  usuniety()
+  //window.location.reload() --dodtkowa komenda do reload page ;)
+
+  
+  
+
   }
 
 
-function edytujElement(id){
+function usuniety(){
+  setTimeout(function(){
+   window.location.reload(1);
+}, 1500);
 
+  let alert = document.getElementById("usunietyAlert")
+  alert.style.display = "block"
+}
+
+function edytujElement(id){
+console.log(id)
 
 }
 
+function reload(){
+setTimeout(function(){
+   window.location.reload(1);
+}, 700); // 700ms opoznienia
+}
 </script>
 
 </body>
