@@ -17,17 +17,7 @@
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-light bg-light static-top">
-            <div class="container">
-                <a class="navbar-brand" href="/">
-                        <img id="logo" src="/assets/logo/429a1db40beb4e12a897cc123387ed80.png" alt="" width="170" height="80">
-                </a>
-                <a class="btn btn-outline-primary btn-lg" href="/umowWizyte">Umow Wizyte</a>
-                <a class="btn btn-outline-primary btn-lg" href="#signup">Lekarze</a>
-                <a class="btn btn-outline-primary btn-lg" href="/kontakt">Kontakt</a>
-                <a class="btn btn-outline-primary btn-lg" href="/zaloguj">Zaloguj</a>
-            </div>
-        </nav>
+        <%- include('./menu') %>
         <!-- Masthead-->
         <header class="masthead">
             <div class="container position-relative">
@@ -245,15 +235,6 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        <style>
-                #logo{
-                    border-radius: 15px;
-                    opacity: 1;
-                }
-                #logo:hover{
-                    border-radius: 15px;
-                    opacity: 0.5;
-                }
-            </style>
+        
     </body>
 </html>
