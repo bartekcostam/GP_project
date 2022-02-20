@@ -69,6 +69,22 @@ app.post('/admin/pracownik', async(req, res) =>{
     }
 })
 
+app.delete('/admin/pracownik/usun/:id', async(req, res) =>{
+        console.log(req.params.id)
+        const usun = req.params.id
+        try{
+            await db.promise().query(`DELETE FROM users WHERE id_pracownika='${usun}'`)
+            res.status(200).send({msg: 'Usunieto pracownika'})
+            console.log("Server - usunieto pracownika")
+        }
+        catch (err){
+            console.log(err)
+        }
+        
+
+
+})
+
 app.get('/admin/ustawienia', (req, res) => {
     res.render('ustawienia')
 })
