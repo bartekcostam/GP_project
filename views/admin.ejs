@@ -12,7 +12,7 @@
 
     <div class="container">
         <div class="row">
-          <div class="col-9">
+          <div class="col-8">
 
             <div class="card" style="width: 18rem;">
                 <img src="https://www.godan.pl/wp-content/uploads/2017/05/calendar-2.jpg" class="card-img-top" alt="...">
@@ -35,12 +35,12 @@
 
           </div>
 
-          <div class="card" style="width: 20rem;">
+          <div class="card" style="width: 24rem;">
             <img src="http://zslchrobry.lezajsk.pl/wp-content/uploads/2017/11/users.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Lista pracowników</h5>
               <% pracownicy.forEach(function(o) { %>
-                <li class="pracownicy"><%= o.imie %> - <%= o.nazwisko %> <%= o.specjalizacja  %></li>
+                <li class="pracownicy"><%= o.imie %> - <%= o.nazwisko %> <%= o.specjalizacja  %>  <img class="usun" src="/assets/icons/cross.svg"></img></li> 
             <% }); %>
               <p class="card-text">...</p>
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -105,6 +105,7 @@
         text-align: center;
         font-size: 75px;
         color: white;
+        animation: bounce 1s;
     }
 
     html, body {
@@ -113,7 +114,7 @@
 }
 
 body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #ee7752, #aab66a, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
@@ -128,6 +129,18 @@ body {
   font-size: 20px;
   background-color:rgb(208, 233, 245);
   border-radius:10px;
+  
+}
+
+.usun{
+  display: inline-block;
+  width: 8%;
+
+}
+
+.usun:hover{
+  background-color:white;
+  width: 10%;
 }
 
 @keyframes gradient {
@@ -142,6 +155,22 @@ body {
     }
 }
 
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
 </style>
 </body>
 </html>
