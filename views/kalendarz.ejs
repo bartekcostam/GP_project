@@ -59,11 +59,12 @@
                 <% for(let y = 0;y < calendar[month][x].length;y++) { %>
 
                 <div class="date">
-                    <div id="<%=calendar[month][x][y] + "/" +"0" + [month + 1] %>">
+                    <div id="<%=calendar[month][x][y] + "/" +"0" + [month + 1] +"/" + year %>">
                         <%= calendar[month][x][y] %>
+                    
                         <div class="rezerwacje">Rezerwacje</div>
-                        <%if (daty[y].sformatowanaData === "16/02/2022") { %>
-                            <p>tutaj<%= [y]%></p>
+                        <%if (daty[y].sformatowanaData == "0" + calendar[month][x][y] + "/" +"0" + [month + 1] +"/" + year ) { %>
+                            <p>tutaj!!!</p>
                             <% } %>
                     </div>
                 </div>
@@ -149,7 +150,7 @@ header > h1{
 }
 
 .month-container{
-    display: none;
+    #display: none;
 }
 
 
@@ -164,8 +165,8 @@ header > h1{
 
 
 <script>
-  aktualnyMiesiac =   document.getElementById("Luty")
-  aktualnyMiesiac.style.display = "block"
+  //aktualnyMiesiac =   document.getElementById("Luty")
+  //aktualnyMiesiac.style.display = "block"
 
 
 
@@ -175,8 +176,7 @@ let dd = String(today.getDate()).padStart(2, '0');
 let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     console.log(dd , mm);
    
-   let current_day =  document.getElementById(dd)
-   current_day.textContent = "Costam"
+
 
    console.log(dd)
    console.log(typeof(dd))
