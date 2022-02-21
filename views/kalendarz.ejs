@@ -59,11 +59,11 @@
                 <% for(let y = 0;y < calendar[month][x].length;y++) { %>
 
                 <div class="date">
-                    <div id="<%=calendar[month][x][y] %>">
+                    <div id="<%=calendar[month][x][y] + "/" +"0" + [month + 1] %>">
                         <%= calendar[month][x][y] %>
                         <div class="rezerwacje">Rezerwacje</div>
-                        <%if (daty[0].sformatowanaData === "16/02/2022") { %>
-                            <h1>tutaj jest </h1>
+                        <%if (daty[y].sformatowanaData === "16/02/2022") { %>
+                            <p>tutaj<%= [y]%></p>
                             <% } %>
                     </div>
                 </div>
