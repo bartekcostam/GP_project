@@ -61,11 +61,17 @@
                 <div class="date">
                     <div id="<%=calendar[month][x][y] + "/" +"0" + [month + 1] +"/" + year %>">
                         <%= calendar[month][x][y] %>
-                    
+                   
                         <div class="rezerwacje">Rezerwacje</div>
-                        <%if (daty[y].sformatowanaData == "0" + calendar[month][x][y] + "/" +"0" + [month + 1] +"/" + year ) { %>
-                            <p>tutaj!!!</p>
+                        <% for(let z = 0;z < daty.length;z++) { %>
+                            <%if (daty[z].sformatowanaData ==  calendar[month][x][y] + "/" +"0" + [month + 1] +"/" + year ) { %>
+                                <p class="zawartosc_rezerwacje">Rezerwacja dla:
+                                    <%=daty[y].name%> <%=daty[y].surname%> 
+                                </p>
+                                <% } %>
+
                             <% } %>
+                        
                     </div>
                 </div>
 
@@ -151,6 +157,12 @@ header > h1{
 
 .month-container{
     #display: none;
+}
+
+.zawartosc_rezerwacje{
+    font-size:15px;
+    background-color:rgb(66, 66, 207);
+    border-radius: 30px;
 }
 
 

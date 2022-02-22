@@ -101,7 +101,7 @@ app.get('/kalendarz', async(req, res) =>{
 
 
 
-    const daty = await db.promise().query(`SELECT name,surname,date, DATE_FORMAT(date,'%d/%m/%Y') AS sformatowanaData  FROM wizyty ORDER BY date DESC LIMIT 0,14`)
+    const daty = await db.promise().query(`SELECT name,surname,date, DATE_FORMAT(date,'%e/%m/%Y') AS sformatowanaData  FROM wizyty ORDER BY date DESC LIMIT 0,14`)
 
    console.log(daty[0])
 
