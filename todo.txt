@@ -9,7 +9,3 @@
 - dodanie uzytkownikow do bazy danych i fetch na frontend, najlepiej w panelu admina 
 
 - Dodanie opcji patch oraz delete dla listy pracwonikow
-
-- Udalo sie dodac konkatenacje dla id w kalendarzu, teraz trzeba przy kazdym wczytywaniu
-rekordu dla kalendarza zastoswoac petle o dlugosci kolumny w bazie danych by dobrze przypinac info o wizytach
-
