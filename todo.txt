@@ -1,11 +1,13 @@
 -Stworzenie machanizmu sesji
 
-- Naprawianie kalendarza 
+- Naprawianie kalendarza V
 
-- Poprawienie panelu admina 
+- Poprawienie panelu admina V
 
 - Możliwośc logowania się na wiele kont (każdy lekarz ma swoje i powinnien wiedziec swoj kalendarz)
 
-- dodanie uzytkownikow do bazy danych i fetch na frontend, najlepiej w panelu admina 
+- dodanie uzytkownikow do bazy danych i fetch na frontend, najlepiej w panelu admina V
 
-- Dodanie opcji patch oraz delete dla listy pracwonikow
+- Dodanie opcji patch oraz delete dla listy pracwonikow (najlepiej za pomoca paczki npm)
+
+
